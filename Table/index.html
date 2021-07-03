@@ -14,8 +14,8 @@
   </head>
   <body>
     <div class="container">
-      <table class="table">
-        <thead>
+      <table class="table" id="display-details">
+        <thead style="color: orange">
           <tr>
             <th>S.NO</th>
             <th>Movie Name</th>
@@ -23,7 +23,25 @@
             <th>Categories</th>
           </tr>
         </thead>
+        <tbody></tbody>
       </table>
+      <button onclick="insertCustomRow()">Call function</button>
     </div>
+    <script>
+      var number = 1;
+      function insertCustomRow() {
+        console.log("function Called");
+        var table = document.getElementById("display-details");
+        var row = table.insertRow();
+        let sno = row.insertCell(0);
+        let movieName = row.insertCell(1);
+        let year = row.insertCell(2);
+        let category = row.insertCell(3);
+        sno.innerHTML = number++;
+        movieName.innerHTML = "Sample";
+        year.innerHTML = 345;
+        category.innerHTML = "randowm category";
+      }
+    </script>
   </body>
 </html>
